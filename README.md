@@ -1,7 +1,5 @@
 # Transcriptor IA
 
-# Transcriptor IA
-
 Sube un audio (o video) de **cualquier formato y duración** y obtén:
 
 1. **Transcripción en vivo** mientras se procesa (Gemini).
