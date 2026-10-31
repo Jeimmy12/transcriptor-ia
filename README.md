@@ -23,12 +23,9 @@ Todo con la **API key de Google** guardada en `.env`; no se descarga ningún mod
   <img src="img/captura-resultados.png" width="48%" alt="Vista de resultados y minutas" />
 </p>
 <p align="center">
-  <img src="img/captura-interfaz.png" width="48%" alt="Interfaz principal del Transcriptor IA" />
-  <img src="img/captura-resultados.png" width="48%" alt="Vista de resultados y minutas" />
-</p>
-<p align="center">
-  <img src="img/captura-interfaz.png" width="48%" alt="Interfaz principal del Transcriptor IA" />
-  <img src="img/captura-resultados.png" width="48%" alt="Vista de resultados y minutas" />
+  <img src="img/envivo.png" width="48%" alt="Interfaz principal del Transcriptor IA" />
+  <img src="img/pulido.png" width="48%" alt="Vista de resultados y minutas" />
+  <img src="img/minuta.png" width="48%" alt="Vista de resultados y minutas" />
 </p>
 
 ---
