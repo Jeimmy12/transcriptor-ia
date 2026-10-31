@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transcriptor IA</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="top">
+  <h1>Transcriptor de audios</h1>
+  <p>Sube una grabación de cualquier duración. Obtén la transcripción en vivo, el texto en buen español y una minuta con los puntos clave.</p>
+</header>
+<div id="banner" class="banner" hidden></div>
+
+<main class="layout">
+  <aside class="side">
+    <label id="drop" class="drop" tabindex="0">
+      <input id="file" type="file" accept="audio/*,video/*,.opus,.m4a,.ogg,.amr,.wma,.aac,.flac,.mkv,.webm" hidden>
+      <strong>Suelta tu archivo aquí</strong>
+      <span>o haz clic para elegirlo. Cualquier audio o video, de cualquier duración.</span>
+    </label>
+
+    <section id="job" class="job" hidden>
+      <div class="file-name" id="fileName"></div>
+      <div class="bar"><div id="barFill"></div></div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <dl class="stats">
+        <div><dt>Bloques</dt><dd id="stChunks">–</dd></div>
+        <div><dt>Duración</dt><dd id="stDur">–</dd></div>
+        <div><dt>Tiempo</dt><dd id="stTime">00:00</dd></div>
+      </dl>
+      <button id="cancel" class="ghost" type="button">Cancelar</button>
+      <button id="again" class="primary" type="button" hidden>Procesar otro audio</button>
+    </section>
+
+    <section class="downloads" aria-label="Descargas">
+      <a id="dl-raw" class="dl" aria-disabled="true">Transcripción en vivo (.txt)</a>
+      <a id="dl-transcript" class="dl" aria-disabled="true">Texto pulido (.txt)</a>
+      <a id="dl-minuta" class="dl" aria-disabled="true">Minuta (.md)</a>
+    </section>
+  </aside>
+
+  <section class="reader">
+    <div class="tabs" role="tablist">
+      <button role="tab" data-pane="raw" aria-selected="true">En vivo <small>Gemini</small></button>
+      <button role="tab" data-pane="polished" aria-selected="false">Texto pulido <small>Gemma</small></button>
+      <button role="tab" data-pane="minuta" aria-selected="false">Minuta <small>Gemma</small></button>
+      <button id="copy" class="ghost copy" type="button">Copiar</button>
+    </div>
+    <div id="pane-raw" class="pane" role="tabpanel"><p class="empty">La transcripción aparecerá aquí mientras se procesa el audio.</p></div>
+    <div id="pane-polished" class="pane" role="tabpanel" hidden><p class="empty">Cada bloque se corrige con Gemma apenas termina de transcribirse.</p></div>
+    <div id="pane-minuta" class="pane md" role="tabpanel" hidden><p class="empty">La minuta se genera al terminar la transcripción.</p></div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
